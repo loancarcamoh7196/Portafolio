@@ -1,3 +1,6 @@
+/*
+        Script de Creación de Tablas Base_Datos Montreal 
+*/
 
 --DROP SECTION
 DROP TABLE alumno CASCADE CONSTRAINTS;
@@ -29,11 +32,14 @@ CREATE TABLE estado (
 );
 ALTER TABLE estado ADD CONSTRAINT estado_pk PRIMARY KEY ( id_estado );
 
+/*
 CREATE TABLE administrador (
     id_admin        INTEGER NOT NULL,
     fk_id_usuario   INTEGER NOT NULL
 );
+
 ALTER TABLE administrador ADD CONSTRAINT administrador_pk PRIMARY KEY ( id_admin );
+*/
 
 CREATE TABLE alumno (
     id_alumno        INTEGER NOT NULL,
@@ -270,10 +276,11 @@ ALTER TABLE encargado_cem
 ALTER TABLE encargado_cem
     ADD CONSTRAINT encargadocem_usuario_fk FOREIGN KEY ( fk_id_usuario )
         REFERENCES usuario ( id_usuario );
-
+/*
 ALTER TABLE administrador
     ADD CONSTRAINT admin_usuario_fk FOREIGN KEY ( id_admin )
         REFERENCES usuario ( id_usuario );
+*/
 
 ALTER TABLE familia_anfitriona
     ADD CONSTRAINT familiaanfitriona_cel_fk FOREIGN KEY ( fk_id_cel )
