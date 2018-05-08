@@ -2,7 +2,22 @@
 
 ----------------------------------------------- Eliminación de Secuencias --------------------------------------------------
 DROP SEQUENCE usuarioSeq;
-DROP SEQUENCE usuarioSeq;
+DROP SEQUENCE alumnoSeq;
+DROP SEQUENCE antecedentesSeq;
+DROP SEQUENCE calificSeq;
+DROP SEQUENCE celSeq;
+DROP SEQUENCE cemSeq;
+DROP SEQUENCE certificadoSeq;
+DROP SEQUENCE ciudadesSeq;
+DROP SEQUENCE cursoSeq;
+DROP SEQUENCE direccionSeq;
+DROP SEQUENCE encCELSeq;
+DROP SEQUENCE encCEMSeq;
+DROP SEQUENCE EstadoSeq;
+DROP SEQUENCE familiaSeq;
+DROP SEQUENCE PaisSeq;
+DROP SEQUENCE postAlumSeq;
+DROP SEQUENCE progCEMSeq;
 --------------------------------------------------------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------------------------------------------------------
@@ -143,8 +158,6 @@ CREATE SEQUENCE progCEMSeq
   MAXVALUE 250
   MINVALUE 10
 ;
-
-
 --------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------
