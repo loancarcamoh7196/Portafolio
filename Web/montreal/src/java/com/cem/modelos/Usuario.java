@@ -6,8 +6,8 @@
 package com.cem.modelos;
 
 /**
- *
- * @author Renzo
+ * Clase Entity de la tabla Usuario en Base de Datos Montreal
+ * @author Lorena
  */
 public class Usuario  {
 
@@ -19,18 +19,34 @@ public class Usuario  {
     private String email;
     private int tipo_usuario;
     
-
+    /**
+     * Constructor por defecto, vacío. De clase Usuario.
+     */
     public Usuario() {
     }
 
+    /**
+     * Constructor con parametros, de clase Usuario, utilizado para proceso de LogIn.
+     * @param id identificador unico de Usuario
+     * @param username alias de Usuario.
+     * @param password contraseña.
+     */
     public Usuario(int id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
     }
 
-    public Usuario(int id, String username, String password, String nombre, String apellido,String email, int tipo_usuario ){
-        this.id  = id;
+    /**
+     * Constructor con parametros, de la clase Usuario. Recordar que id es generado por la bd.
+     * @param username alias de Usuario.
+     * @param password constraseña.
+     * @param nombre nombre de Usuario.
+     * @param apellido apellido de Usuario.
+     * @param email email de Usuario.
+     * @param tipo_usuario  tipo de Usuario creado.
+     */
+    public Usuario( String username, String password, String nombre, String apellido,String email, int tipo_usuario ){
         this.username = username;
         this.password = password;
         this.nombre = nombre;
@@ -63,63 +79,36 @@ public class Usuario  {
         this.password = password;
     }
     
-    /**
-     * @return the nombre
-     */
     public String getNombre() {
         return nombre;
     }
 
-    /**
-     * @param nombre the nombre to set
-     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    /**
-     * @return the apellido
-     */
     public String getApellido() {
         return apellido;
     }
 
-    /**
-     * @param apellido the apellido to set
-     */
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
 
-    /**
-     * @return the email
-     */
     public String getEmail() {
         return email;
     }
 
-    /**
-     * @param email the email to set
-     */
     public void setEmail(String email) {
         this.email = email;
     }
 
-    /**
-     * @return the tipo_usuario
-     */
     public int getTipo_usuario() {
         return tipo_usuario;
     }
 
-    /**
-     * @param tipo_usuario the tipo_usuario to set
-     */
     public void setTipo_usuario(int tipo_usuario) {
         this.tipo_usuario = tipo_usuario;
     }
-    
-    
-    
     
 }

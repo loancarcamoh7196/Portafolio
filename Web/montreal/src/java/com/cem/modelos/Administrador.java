@@ -6,50 +6,45 @@
 package com.cem.modelos;
 
 /**
- *
- * @author Renzo
+ * Clase Entity de la tabla Administrador en Base de Datos Montreal
+ * @author Lorena
  */
 public class Administrador {
     
-    private int id;
     private Usuario usuario;
-
+    
+    /**
+     * Constructor por defecto de clase Administrador, vacío.
+     */
     public Administrador(){
         
     }
     
-    public Administrador(Usuario usuario){
-        this.usuario = usuario;
+    /**
+     * Constructor por parametros de clase Administrador.
+     * @param username alias de Usuario
+     * @param clave contraseña
+     * @param nombre_usuario Nombre del Administrador
+     * @param apellido_usuario Apellido de Administrador
+     * @param email Email de administrador
+     */
+    public Administrador(String username, String clave,String nombre_usuario,String apellido_usuario, String email ){
+        super();
     }
   
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
 
     /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the usuario
+     * @return devuelve objeto de tipo Usuario, dependiente de Administrador
      */
     public Usuario getUsuario() {
         return usuario;
     }
 
     /**
-     * @param usuario the usuario to set
+     * @param usuario modifica objeto tipo Usuario, dependiente de Administrador
      */
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-    
-    
     
 }

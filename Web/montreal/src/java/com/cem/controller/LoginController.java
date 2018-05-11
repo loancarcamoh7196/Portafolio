@@ -50,7 +50,7 @@ public class LoginController {
         String password;
         
         //SQL (Indicar datos es necesario)
-        String sql="select id, username, password from users where username='usname'";
+        String sql="select id_usuario, username, clave from usuario where id_usuario=1 ";
         
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
         for(int i=0; i < rows.size(); i++){

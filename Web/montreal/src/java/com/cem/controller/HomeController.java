@@ -38,7 +38,7 @@ public class HomeController {
         String password;
         
         //SQL (Indicar datos es necesario)
-        String sql="select id, username, password from users";
+        String sql="select id_usuario, username, clave from usuario where id_usuario=1";
         
         //Mapeo
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
