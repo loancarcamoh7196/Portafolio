@@ -20,8 +20,9 @@
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>
-                <prop key="home.htm">homeController</prop>
+                <!--<prop key="home.htm">homeController</prop> -->
                 <prop key="login.htm">loginController</prop>
+                <prop key="admin/home.htm">adminController</prop>
             </props>
         </property>
     </bean>
@@ -36,8 +37,8 @@
     -->
     <bean name="homeController" class="com.cem.controller.HomeController"/>
     <bean name="loginController" class="com.cem.controller.LoginController"/>
-    <bean name="indexController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="index" />
+    <bean name="adminController" class="com.cem.controller.AdministradorController"/>
+    
+    <bean name="indexController" class="org.springframework.web.servlet.mvc.ParameterizableViewController" p:viewName="index" />
 
 </beans>

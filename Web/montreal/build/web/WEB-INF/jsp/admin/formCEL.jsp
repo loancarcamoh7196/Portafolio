@@ -18,6 +18,10 @@
         <form >
             <table>
                 <tr>
+                    <td>Alias o Username :</td>
+                    <td> <input type="text" name="username" value=""/><td>
+                </tr>
+                <tr>
                     <td>Nombre:</td>
                     <td><input type="text" name="nombre" value="" /></td>
                 </tr>
