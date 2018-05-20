@@ -1,7 +1,6 @@
 /*
         Script de Creación de Tablas Base_Datos Montreal 
 */
-
 --DROP SECTION
 DROP TABLE alumno CASCADE CONSTRAINTS;
 DROP TABLE antecedente CASCADE CONSTRAINTS;
@@ -21,7 +20,7 @@ DROP TABLE usuario CASCADE CONSTRAINTS;
 DROP TABLE cursos_cel CASCADE CONSTRAINTS;
 DROP TABLE familia_anfitriona CASCADE CONSTRAINTS;
 DROP TABLE estado CASCADE CONSTRAINTS;
-DROP TABLE administrador CASCADE CONSTRAINTS;
+--DROP TABLE administrador CASCADE CONSTRAINTS;
 
 
 --TABLE CREATION
@@ -37,7 +36,6 @@ CREATE TABLE administrador (
     id_admin        INTEGER NOT NULL,
     fk_id_usuario   INTEGER NOT NULL
 );
-
 ALTER TABLE administrador ADD CONSTRAINT administrador_pk PRIMARY KEY ( id_admin );
 */
 
@@ -173,8 +171,10 @@ CREATE TABLE programa_estudio_cem (
     duracion           VARCHAR2(100) NOT NULL,
     cant_min_alumnos   INTEGER NOT NULL,
     cant_max_alumnos   INTEGER NOT NULL,
-    fk_id_cod          INTEGER NOT NULL
+    fk_id_cod_cem      INTEGER NOT NULL, 
+    fk_id_estado       INTEGER NOT NULL
 );
+
 
 ALTER TABLE programa_estudio_cem ADD CONSTRAINT programa_estudio_cem_pk PRIMARY KEY ( id_programa );
 
@@ -307,8 +307,12 @@ ALTER TABLE postulacion_alumno
         REFERENCES familia_anfitriona ( id_familia );
 
 ALTER TABLE programa_estudio_cem
-    ADD CONSTRAINT programa_cem_fk FOREIGN KEY ( fk_id_cod )
+    ADD CONSTRAINT programa_estadoCEM_fk FOREIGN KEY ( fk_id_cod_cem )
         REFERENCES cem ( id_cod );
+        
+ALTER TABLE programa_estudio_cem
+    ADD CONSTRAINT programa_estado_fk FOREIGN KEY ( fk_id_estado )
+        REFERENCES estado ( id_estado );
 
 ALTER TABLE usuario
     ADD CONSTRAINT usuario_tipousuario_fk FOREIGN KEY ( fk_id_tipo )
