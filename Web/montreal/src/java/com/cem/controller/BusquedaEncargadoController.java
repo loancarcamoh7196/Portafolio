@@ -9,8 +9,12 @@ import com.cem.modelos.Usuario;
 import com.cem.modelos.UsuarioRowMapper;
 import com.cem.servicios.EncargadoCELServicio;
 import com.cem.servicios.EncargadoCEMServicio;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,31 +39,33 @@ public class BusquedaEncargadoController {
     @RequestMapping(value="admin/busqUsuario.htm", method=RequestMethod.POST)
     public ModelAndView form(Usuario user, ModelMap model){
         
-        String mav;
+        ModelAndView modelView = new ModelAndView();
         EncargadoCEMServicio serv1 = new EncargadoCEMServicio();
         EncargadoCELServicio serv2 = new EncargadoCELServicio();
         
         String alias = user.getUsername();
         
         if(user.getTipo_usuario()== 2){
-//            serv1.findByUserName(alias);
-//            List<Usuario> listUsers = serv1.findByUserName(alias);
+            List<Usuario> listUsers = serv1.listarUsuariosPorAlias(alias);
 //            mav = "admin/EncargadoActualizar";
 //            model.addAllAttributes(listUsers);
-            List<Usuario> listUsers = serv1.listarUsuariosPorAlias(alias);
-            return new ModelAndView("EncargadoActualizar", (Map<String, ?>) listUsers);
+            modelView.setViewName("admin/EncargadoActualizar");
+            modelView.addObject(listUsers);
+            return modelView;
         }else{
             if(user.getTipo_usuario()== 3){
-//                serv2.findByUserName(alias);
-//                List<Usuario> listUsers = serv2.findByUserName(alias);
+                List<Usuario> listUsers = serv1.listarUsuariosPorAlias(alias);
+                modelView.setViewName("admin/EncargadoActualizar");
+                modelView.addObject(listUsers);
+                return modelView;
+                
 //                mav = "admin/EncargadoActualizar";
-//                model.addAllAttributes(listUsers);
-                List<Usuario> listUsers = serv2.listarUsuariosPorAlias(alias);
-                return new ModelAndView("EncargadoActualizar", (Map<String, ?>) listUsers);
+//                model.addAllAttributes(listUsers);  
+//                return new ModelAndView(mav);
             }else{
-                mav = "admin/EncargadoActualizar";
+                modelView.setViewName("admin/EncargadoActualizar");
                 model.addAttribute("username", alias);
-                return new ModelAndView(mav);
+                return modelView;
             }  
         }
 //        UsuarioRowMapper wrapper = new UsuarioRowMapper();

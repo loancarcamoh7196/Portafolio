@@ -11,6 +11,7 @@ import com.cem.modelos.UsuarioRowMapper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
@@ -148,5 +149,44 @@ public class EncargadoCELServicio {
         }
         
         return usuarios;
+    }
+    
+    public Map<Integer,Usuario> listarUsuariosPorAlias2(String _username){
+        List<Usuario> usuarios = new ArrayList<Usuario>();
+        Usuario usuario = null;
+        Map<Integer, Usuario> linkMapUser = new TreeMap<Integer, Usuario>();
+        int id;
+        String alias, nombre,apellido,email,pass;  
+        
+        //SQL (Indicar datos es necesario)
+        String sql="SELECT id_usuario, username,nombre_usuario,apellido_usuario,email_usuario,clave "
+                 + "FROM usuario "
+                 + " WHERE fk_id_tipo=2 AND username LIKE '%"+ _username+"%'";
+        
+        //Mapeo
+        List<Map<String, Object>> rows = jt.queryForList(sql);
+        
+        for(int i=0; i < rows.size(); i++){
+            usuario = new Usuario();
+            /*Primero parseamoas los resultados de la consulta*/
+            id = Integer.parseInt(rows.get(i).get("id_usuario").toString());
+            alias = rows.get(i).get("username").toString();
+            nombre = rows.get(i).get("nombre_usuario").toString();
+            apellido = rows.get(i).get("apellido_usuario").toString();
+            email = rows.get(i).get("email_usuario").toString();
+            pass = rows.get(i).get("clave").toString();
+            
+            /*Insertamos datos recuperados a un Obejto Usuario*/
+            usuario.setId(id);
+            usuario.setUsername(alias);
+            usuario.setNombre(nombre);
+            usuario.setApellido(apellido);
+            usuario.setEmail(email);
+            usuario.setTipo_usuario(2);
+            usuario.setPassword(pass);
+            linkMapUser.put(i,usuario);
+        }
+        
+        return linkMapUser;
     }
 }

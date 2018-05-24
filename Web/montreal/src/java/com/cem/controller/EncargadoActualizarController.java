@@ -24,9 +24,11 @@ public class EncargadoActualizarController {
     @RequestMapping("admin/EncargadoActualizar.htm")
     public ModelAndView home(HttpServletRequest request){
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("EncargadoActualizar");
+        
+        mav.setViewName("admin/EncargadoActualizar");
         
         List<Usuario> list = (List<Usuario>) request.getAttribute("listUsers");
+        mav.addObject("ListadoUser",list);
 //        String nombre = request.getParameter("username");
 //        String pass = request.getParameter("nombre");
 //        mav.addObject("username", nombre);
@@ -37,10 +39,10 @@ public class EncargadoActualizarController {
         return mav;
     }
     
-    @RequestMapping("admin/EncargadoActualizar.htm")
-    public ModelAndView home(){
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("AdminAgregar");
-        return mav;
-    }
+//    @RequestMapping("admin/EncargadoActualizar.htm")
+//    public ModelAndView home(){
+//        ModelAndView mav = new ModelAndView();
+//        mav.setViewName("AdminAgregar");
+//        return mav;
+//    }
 }
