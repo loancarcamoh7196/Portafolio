@@ -17,8 +17,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  * @author Gondan
  */
 public class UsuarioServicio {
-    
-    private JdbcTemplate jt;
+            private JdbcTemplate jt;
     
     public UsuarioServicio(){
         Conectar cn = new Conectar();

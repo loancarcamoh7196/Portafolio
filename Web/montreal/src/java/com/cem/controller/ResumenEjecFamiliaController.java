@@ -5,25 +5,19 @@
  */
 package com.cem.controller;
 
-import com.cem.modelos.Administrador;
 import com.cem.modelos.Conectar;
-import com.cem.modelos.Usuario;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
- * @author Lorena
+ * @author Portafolio
  */
-public class AdministradorController {
-    
+public class ResumenEjecFamiliaController {
     private JdbcTemplate jdbcTemplate;
     
-     public AdministradorController(){
+     public ResumenEjecFamiliaController(){
         Conectar con = new Conectar();
         this.jdbcTemplate = new JdbcTemplate(con.conectar());
     }
@@ -32,13 +26,12 @@ public class AdministradorController {
       *Método que permite cargar vista Home de Usuario Administrador
       * @return  Un Objeto ModelAndView
       */
-    @RequestMapping("admin/home.htm")
+    @RequestMapping("admin/resumenEjecFamilia.htm")
     public ModelAndView home(){
         ModelAndView mav = new ModelAndView();
         
-        mav.setViewName("admin/home");
+        mav.setViewName("admin/resumenEjecFamilia");
         
         return mav;
     }
-   
 }

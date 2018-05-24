@@ -1,8 +1,7 @@
 <%-- 
-    Document   : formCEM
-    Created on : 11-may-2018, 13:06:26
+    Document   : formCEL
+    Created on : 11-may-2018, 13:46:27
     Author     : Lorena
-    Description: Formulario de Encargados CEL, recordar que debe ser dinámico.
 --%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
@@ -11,10 +10,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Formulario encargado CEM</title>
+        <title>Formulario encargado CEL</title>
     </head>
     <body>
-        <h1>Formulario encargado CEM</h1>
+        <h1>Agregar usuario Administrador</h1>
         
         <div align="center">
             <form:form   >
@@ -41,17 +40,11 @@
                        <td> <form:input path="email"  /><td>
                     </tr>
                     <tr>
-                       <td><form:label path="tipo_usuario" >Centro de Estudios Asociado : </form:label></td>
-                        <td> <form:input path="tipo_usuario"  /><td>
-                    </tr>
-                    <tr>
                         <td><a href="../admin/home.htm">Volver</a></td>
-                        <td><form:button>Ingresar</form:button></td>
+                        <td><form:button>Agregar</form:button></td>
                     </tr>   
                 </table>
             </form:form>
         </div>
-        
-        
     </body>
 </html>

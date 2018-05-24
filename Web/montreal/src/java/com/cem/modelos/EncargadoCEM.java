@@ -18,7 +18,8 @@ public class EncargadoCEM {
         
     }
     
-    public EncargadoCEM(String username, String clave,String nombre_usuario,String apellido_usuario, String email, String centro_estudios){
+    public EncargadoCEM(String username, String clave,String nombre_usuario,String apellido_usuario, String email, 
+            String centro_estudios){
         super();
         this.centro_estudios = centro_estudios;
     }
