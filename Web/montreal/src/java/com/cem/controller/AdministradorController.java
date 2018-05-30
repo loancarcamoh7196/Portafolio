@@ -36,40 +36,9 @@ public class AdministradorController {
     public ModelAndView home(){
         ModelAndView mav = new ModelAndView();
         
-        List<Usuario> userList = usersMap();
-        mav.addObject("userList",userList);
-        
         mav.setViewName("admin/home");
         
         return mav;
     }
-    
-    private List<Usuario> usersMap(){
-        //Datos a utilizar
-        List<Usuario> userList = new ArrayList<Usuario>();
-        int id;
-        String username;
-        String password;
-        
-        //SQL (Indicar datos es necesario)
-        String sql="select id_usuario, username, clave from usuario";
-        
-        //Mapeo
-        List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
-        for(int i=0; i < rows.size(); i++){
-            Usuario user = new Usuario();
-            id = Integer.parseInt(rows.get(i).get("id").toString());
-            user.setId(id);
-            username = rows.get(i).get("username").toString();
-            user.setUsername(username);
-            password = rows.get(i).get("password").toString();
-            user.setPassword(password);
-            userList.add(user);
-        }
-        
-        //Enviar Lista
-        return userList;
-    }
-    
-    
+   
 }

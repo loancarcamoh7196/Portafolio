@@ -15,7 +15,7 @@ public class Conectar {
         dataSource.setDriverClassName(oracle.jdbc.driver.OracleDriver.class.getName());
         dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
         dataSource.setUsername("cem");
-        dataSource.setPassword("montreal");
+        dataSource.setPassword("cem");
         return dataSource;
     }
 }
