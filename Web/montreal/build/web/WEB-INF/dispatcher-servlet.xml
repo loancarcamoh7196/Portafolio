@@ -29,17 +29,39 @@
                             <prop key="admin/CEMAgregar.htm">agregarCEMController</prop>
                         <prop key="admin/formCEL.htm">formCELController</prop>
                             <prop key="admin/CELAgregar.htm">agregarCELController</prop>
-                        <prop key="admin/busqUsuario.htm">busquedaEncargadoController</prop>
+                            
+                        <prop key="admin/CEMbusqUsuario.htm">CEMbusquedaController</prop>
+                            <!--<prop key="admin/CEMLista.htm">cemlListaController</prop>-->
+                            <prop key="admin/CEMActualizarForm.htm">cemActualizarController</prop>
+                            <prop key="admin/CEMActualizarAccion.htm">cemActAccionController</prop>
+                                                   
+                        <prop key="admin/CELbusqUsuario.htm">CELbusquedaController</prop>
                             <!--<prop key="admin/Adminr.htm">agregarCELController</prop>-->
-                        <prop key="admin/busqElimUsuario.htm"> busquedaElimEncargadoController</prop>
-                        <prop key="admin/formAdmin.htm">formAdminController</prop>
+                            <prop key="admin/CELActualizarForm.htm">celActualizarController</prop>
+                            <prop key="admin/CELActualizarAccion.htm">celActAccionController</prop>
+                            
+                        <prop key="admin/UsuarioBusqElim.htm"> busquedaElimEncargadoController</prop>
+                            <prop key="admin/UsuarioEliminar.htm">usuarioEliminarController</prop>
+                            
+                        <prop key="admin/AdminForm.htm">formAdminController</prop>
                             <prop key="admin/AdminAgregar.htm">agregarAdminController</prop>
+                            
+                            
                     <!-- seccion 2 - Administrador -->
-                        <prop key="admin/busqActuaPrograma.htm">busqActualizarProgramaContoller</prop>
-                        <prop key="admin/busqElimPrograma.htm">busqEliminarProgramaContoller</prop>
+                        <prop key="admin/busqActuaPrograma.htm">busqActualizarProgramaController</prop>
+                        <prop key="admin/ProgramaBusqElim.htm">busqEliminarProgramaController</prop>
+                            <prop key="admin/ProgramaLista.htm">programaListaController</prop>
+                            <prop key="admin/ProgramaActualizarForm.htm">programaActualizarFormController</prop>
+                            <prop key="admin/ProgramaActualizarAccion.htm">programaActualizarAccionController</prop>
+                            <prop key="admin/ProgramaEliminar.htm">programaEliminarController</prop>
+                            
+                        <prop key="admin/ProgramaBusqActua">programaBusqActualizarController</prop>
                     <!-- seccion 3 - Administrador -->
         
                     <!-- seccion 4 - Administrador -->
+                        <prop key="admin/ResumenGeneral.htm" >resumenGeneralController</prop>
+                        
+                        
                         <prop key="admin/resumenEjecPrograma.htm">resumenEjecutivoProgramaContoller</prop>
                         <prop key="admin/resumenEjecAlumno.htm">resumenEjecutivoAlumnoContoller</prop>
                         <prop key="admin/resumenEjecFamilia.htm">resumenEjecutivoFamiliaContoller</prop>
@@ -61,21 +83,39 @@
     <!-- Administrador -->
     <bean name="adminController" class="com.cem.controller.AdministradorController"/>
         <!-- seccion 1 - Administrador -->
-            <bean name="formCEMController" class="com.cem.controller.FormCEMController"/> 
+            <bean name="formCEMController" class="com.cem.controller.CEMFormController"/> 
                 <bean name="agregarCEMController" class="com.cem.controller.CEMAgregarController" />
-            <bean name="formCELController" class="com.cem.controller.FormCELController"/>
+            <bean name="formCELController" class="com.cem.controller.CELFormController"/>
                 <bean name="agregarCELController" class="com.cem.controller.CELAgregarController" />
-            <bean name="busquedaEncargadoController" class="com.cem.controller.BusquedaEncargadoController" />
+                
+            <bean name="CEMbusquedaController" class="com.cem.controller.CEMBusquedaController" /> 
+                <!--<bean name="cemlListaController" class="com.cem.controller.CEM" />-->
+                <bean name="cemActualizarController" class="com.cem.controller.CEMActualizarController" /> 
+                <bean name="cemActAccionController" class="com.cem.controller.CEMActualizarAccion" />
+                
+            <bean name="CELbusquedaController" class="com.cem.controller.CELBusquedaController" /> 
+                <bean name="celActualizarController" class="com.cem.controller.CELActualizarController" /> 
+                <bean name="celActAccionController" class="com.cem.controller.CELActualizarAccionController" />
             
-            <bean name="busquedaElimEncargadoController" class="com.cem.controller.BusquedaEliminarEncargadoController" /> 
-            <bean name="formAdminController" class="com.cem.controller.FormAdminController"/> 
-                <bean name="agregarAdminController" class="com.cem.controller.AdministradorAgregarController" />
+            <bean name="busquedaElimEncargadoController" class="com.cem.controller.UsuarioBusquedaEliminarController" /> 
+                <bean name="usuarioEliminarController" class="com.cem.controller.UsuarioEliminarController" />
+            
+            <bean name="formAdminController" class="com.cem.controller.AdminFormController"/> 
+                <bean name="agregarAdminController" class="com.cem.controller.AdminAgregarController" />
+                
         <!-- seccion 2 - Administrador -->
-            <bean name="busqActualizarProgramaContoller" class="com.cem.controller.BusquedaActualizarProgramaController" /> 
-            <bean name="busqEliminarProgramaContoller" class="com.cem.controller.BusquedaEliminarProgramaController" /> 
+            <bean name="programaBusqActualizarController" class="com.cem.controller.ProgramaBusquedaActualizarController" />
+        
+            <bean name="busqActualizarProgramaController" class="com.cem.controller.BusquedaActualizarProgramaController" /> 
+                <bean name="busqEliminarProgramaController" class="com.cem.controller.ProgramaBusquedaEliminarController" />
+                <bean name="programaListaController" class="com.cem.controller.ProgramaListaController"/>
+                <bean name="programaActualizarFormController" class="com.cem.controller.ProgramaActualizarFormController" />
+                <bean name="programaActualizarAccionController" class="com.cem.controller.ProgramaActualizarAccionController" />
+                <bean name="programaEliminarController" class="com.cem.controller.ProgramaEliminarController" />
         <!-- seccion 3 - Administrador -->
         
         <!-- seccion 4 - Administrador -->
+            <bean name="resumenGeneralController" class="com.cem.controller.ResumenGeneralController" />
             <bean name="resumenEjecutivoProgramaContoller" class="com.cem.controller.ResumenEjecProgramaController" />
             <bean name="resumenEjecutivoAlumnoContoller" class="com.cem.controller.ResumenEjecAlumnoController"/>
             <bean name="resumenEjecutivoFamiliaContoller" class="com.cem.controller.ResumenEjecFamiliaController"/>
